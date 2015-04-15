@@ -8,7 +8,7 @@ classdef polynomialR2R < R2Rfunction
   methods (Access=public)
     % Constructor
     function this = polynomialR2R(p)      
-      syms('x');      
+      syms('x');           
       this = this@R2Rfunction(x.^((length(p)-1):-1:0)*p');         
       this.p = p;
     end    
@@ -17,5 +17,8 @@ classdef polynomialR2R < R2Rfunction
       r = roots(this.p);
       v = r(r == real(r));
     end
-  end
+    function v = getCoeffs(this)
+      v = this.p;
+    end    
+  end  
 end

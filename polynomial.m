@@ -2,7 +2,7 @@ classdef polynomial < handle
   % Class for operating with a polynomial  
   %
   
-  properties (GetAccess=private,SetAccess=private)
+  properties (GetAccess=protected,SetAccess=protected)
     p % coeffs
   end
   methods (Access=public)
