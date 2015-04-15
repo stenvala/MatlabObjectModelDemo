@@ -18,7 +18,7 @@ classdef polynomialExt < polynomial
       end
       c = ac+bc;
       % init new polynomial and return it
-      p = polynomialR2R(c);
+      p = polynomialExt(c);
     end
   end
 end

@@ -30,6 +30,6 @@ classdef R2toRfunction < handle
       figure(1);
       contour(X,Y,this.evaluate(X,Y),varargin{:});      
     end   
-    plotGrad(this,x,y,varargin) % not here only function introduction
+    plotGrad(this,x,y,varargin) % note here only method introduction
   end
 end
