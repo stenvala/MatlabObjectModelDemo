@@ -11,10 +11,10 @@ classdef polynomialExt < polynomial
       ac = a.p;
       bc = b.p;
       if length(ac) < length(bc)
-        ac = [length(bc)-length(ac) ac];
+        ac = [zeros(1,length(bc)-length(ac)) ac];
       end
       if length(bc) < length(ac)
-        bc = [length(ac)-length(bc) bc];
+        bc = [zeros(1,length(ac)-length(bc)) bc];
       end
       c = ac+bc;
       % init new polynomial and return it
