@@ -14,10 +14,18 @@ classdef polynomial < handle
     function v = evaluate(this,x)
       v = polyval(this.p,x);
     end
+    % get coefficients
+    function p = getCoeffs(this)
+        p = this.p;
+    end    
     % get real roots
     function v = getRealRoots(this)
       r = roots(this.p);
       v = r(r == real(r));
+    end       
+    % set new coefficients
+    function setCoeffs(this,p)
+      this.p = p;
     end
   end
 end
