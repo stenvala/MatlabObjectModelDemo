@@ -6,14 +6,13 @@ classdef R2toRfunction < handle
     fun % function
     funMatlab % corresponding matlab function
     grad % gradient
-    gradMatlab % corresponding matlab function
-    var % variables
+    gradMatlab % corresponding matlab function    
   end
   methods (Access=public)
     % Constructor (cannot be in separate file)
     function this = R2toRfunction(fun,var1,var2)
       this.fun = fun;
-      this.funMatlab = matlabFunction(fun);
+      this.funMatlab = matlabFunction(fun);          
       this.grad = [diff(fun,var1); diff(fun,var2)];
       this.gradMatlab = matlabFunction(this.grad);
     end

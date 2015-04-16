@@ -1,4 +1,4 @@
-classdef polynomialR2R < R2Rfunction
+classdef polynomialRtoR < RtoRfunction
   % Class for operating with a polynomial  
   %
   
@@ -7,18 +7,15 @@ classdef polynomialR2R < R2Rfunction
   end
   methods (Access=public)
     % Constructor
-    function this = polynomialR2R(p)      
+    function this = polynomialRtoR(p)      
       syms('x');           
-      this = this@R2Rfunction(x.^((length(p)-1):-1:0)*p');         
+      this = this@RtoRfunction(x.^((length(p)-1):-1:0)*p');         
       this.p = p;
     end    
     % get real roots
     function v = getRealRoots(this)
       r = roots(this.p);
       v = r(r == real(r));
-    end
-    function v = getCoeffs(this)
-      v = this.p;
     end    
   end  
 end

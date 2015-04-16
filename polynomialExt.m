@@ -1,15 +1,15 @@
 classdef polynomialExt < polynomial
   % Class for operating with a polynomial, extended to consider addition of
-  % polynomials (note! for this example GetAccess and SetAccess of properties
-  % in polynomial was changed to protected)
+  % polynomials 
   %
+  
   methods (Access=public)
     function this = polynomialExt(p)
       this = this@polynomial(p);
     end
     function p = plus(a,b)
-      ac = a.p;
-      bc = b.p;
+      ac = a.getCoeffs();
+      bc = b.getCoeffs();
       if length(ac) < length(bc)
         ac = [zeros(1,length(bc)-length(ac)) ac];
       end

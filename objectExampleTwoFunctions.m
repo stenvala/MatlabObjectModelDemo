@@ -2,12 +2,12 @@
 
 function objectExampleTwoFunctions
 
-  p = polynomialR2R([-2 1 3 -4 2 1]);
+  p = polynomialRtoR([-2 1 3 -4 2 1]);
   realRoots = p.getRealRoots();
   
   % pick another function, now any R->R function
   syms('x','real');
-  s = R2Rfunction(50*sin(x));
+  s = RtoRfunction(50*sin(x));
   
   % display polynomial and its real roots
   x = linspace(min(realRoots)-1,max(realRoots)+1); 
@@ -19,7 +19,6 @@ function objectExampleTwoFunctions
   plot(r,s.evaluate(r),'*k');
   % plot also derivative
   plot(x,s.evaluate(x,1),'-r');  
-  hold off
-  
+  hold off 
   
 end

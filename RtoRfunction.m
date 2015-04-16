@@ -1,15 +1,14 @@
-classdef R2Rfunction < handle
+classdef RtoRfunction < handle
   % Class for operating with a R->R function
   %
   
   properties (GetAccess=private,SetAccess=private)
     fun % function
-    funMatlab % corresponding matlab function
-    var % variables
+    funMatlab % corresponding matlab function    
   end
   methods (Access=public)
     % Constructor
-    function this = R2Rfunction(fun)
+    function this = RtoRfunction(fun)
       this.fun{1} = fun;
       this.funMatlab{1} =  matlabFunction(fun);
     end
